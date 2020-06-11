@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Hello world!{% endblock %}
+
+
+{% block content %}
+<h1 class="text-center">Hello world!</h1>
+<p>
+    {% if counter %}
+    The {{ counter.name }} counter is at {{ counter.count }}
+    {% else %}
+    To create or increment a count, pass in a request argument <pre>?counter_name=&lt;counter_name:string&gt;</pre>
+    {% endif %}
+</p>
+{% endblock %}
