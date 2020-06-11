@@ -10,6 +10,7 @@
         {%- endblock metas %}
 
         {%- block styles %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/core.css')}}">
             {% block extra_styles %}
             {%- endblock extra_styles %}
         {%- endblock styles %}
