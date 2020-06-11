@@ -33,7 +33,7 @@ def db(app):
 
 @pytest.fixture(scope="function")
 def clear_db(db):
-    # Resets all database state between tests. Auto incrmeent IDs will not be reset.
+    # Resets all database state between tests. Auto increment IDs will not be reset.
     connection = db.engine.connect()
     transaction = connection.begin()
     options = dict(bind=connection, binds={})
