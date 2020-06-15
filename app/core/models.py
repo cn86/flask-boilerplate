@@ -2,7 +2,7 @@ from app import db
 
 
 class Counter(db.Model):
-    __tablename__ = 'users'
+    __tablename__ = 'counters'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False, unique=True)
     count = db.Column(db.Integer, default=0)
