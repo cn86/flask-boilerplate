@@ -1,6 +1,9 @@
+import fsspec
+
 import pytest
 
-from app import create_app, db as _db
+from app import create_app
+from core.extensions import db as _db
 
 # Add all fixture files here.
 pytest_plugins = [
@@ -46,3 +49,18 @@ def clear_db(db):
     transaction.rollback()
     connection.close()
     session.remove()
+
+
+@pytest.fixture(scope='function')
+def clean_fs():
+    ''' Delete all files in the in-memory test filesystem.
+    '''
+    yield
+    fs = fsspec.filesystem('memory')
+    for file in fs.find('/'):
+        fs.delete(file)
+
+
+@pytest.fixture(scope='function')
+def test_fs(clean_fs):
+    return fsspec.filesystem('memory')

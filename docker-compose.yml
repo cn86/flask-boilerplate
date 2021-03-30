@@ -19,8 +19,8 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: lines
-      POSTGRES_USER: lines
-      POSTGRES_DB: lines
+      POSTGRES_PASSWORD: boiler
+      POSTGRES_USER: boiler
+      POSTGRES_DB: boiler
     volumes:
       - ./docker/db-entrypoint:/docker-entrypoint-initdb.d

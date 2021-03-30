@@ -1,4 +1,4 @@
-from app import db
+from core.extensions import db
 
 
 class Counter(db.Model):

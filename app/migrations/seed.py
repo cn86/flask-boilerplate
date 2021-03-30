@@ -1,4 +1,6 @@
-from app import create_app, db
+from app import create_app
+
+from core.extensions import db
 
 import core.models as core_models
 

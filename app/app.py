@@ -1,20 +1,5 @@
 from flask import Flask, jsonify, request, redirect
-from flask_cors import CORS
-from flask_debugtoolbar import DebugToolbarExtension
-from flask_login import LoginManager
-from flask_mail import Mail
-from flask_migrate import Migrate
-from flask_marshmallow import Marshmallow
-from flask_sqlalchemy import SQLAlchemy
-
-
-cors = CORS()
-db = SQLAlchemy()
-login_manager = LoginManager()
-mail = Mail()
-ma = Marshmallow()
-migrate = Migrate()
-toolbar = DebugToolbarExtension()
+from core.extensions import cors, db, login_manager, mail, migrate, toolbar
 
 
 def create_app(config_name='dev'):
@@ -51,9 +36,6 @@ def create_app(config_name='dev'):
     # Need to load models before initializing Migration extension
     from core.models import Counter  # noqa
     migrate.init_app(app, db)
-
-    # marshmallow needs to be initialized after SQLAlchemy
-    ma.init_app(app)
 
     register_blueprints(app)
     add_session_rollback(app)
