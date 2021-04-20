@@ -44,11 +44,6 @@ fsspec==0.8.7
     # via -r requirements.in
 gunicorn==20.0.0
     # via -r requirements.in
-importlib-metadata==1.6.1
-    # via
-    #   fsspec
-    #   pluggy
-    #   pytest
 itsdangerous==1.1.0
     # via
     #   flask
@@ -72,7 +67,7 @@ pluggy==0.13.1
     # via pytest
 psycopg2==2.8.4
     # via -r requirements.in
-py==1.8.1
+py==1.10.0
     # via pytest
 pyparsing==2.4.7
     # via packaging
@@ -99,8 +94,6 @@ werkzeug==1.0.1
     #   flask-debugtoolbar
 wtforms==2.3.1
     # via flask-wtf
-zipp==3.1.0
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
